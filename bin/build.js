@@ -37,10 +37,20 @@ const config = {
     js: {
       transformGroup: 'js',
       buildPath: outDir,
-      files: [{
-        destination: 'token.js',
-        format: 'javascript/module'
-      }]
+      files: [
+        {
+          destination: 'token.js',
+          format: 'javascript/module'
+        },
+        {
+          destination: 'token.mjs',
+          format: 'javascript/es6'
+        },
+        {
+          destination: 'token.d.ts',
+          format: 'typescript/es6-declarations'
+        }
+      ]
     },
     css: {
       transformGroup: 'css',

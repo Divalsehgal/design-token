@@ -14,15 +14,19 @@ npm install dival-design-tokens
 
 ## How to Use It
 
-This package exports its base token JSON out of the box so you can consume the uncompiled data if desired:
+This package natively exports fully compiled modern ES Modules (`.mjs`) alongside standard CommonJS (`.js`) and TypeScript definitions (`.d.ts`).
+
+This means you can import only the specific tokens you need in your frontend framework (React, Vue, Vite, Next.js, etc.) and your bundler will automatically tree-shake the rest, ensuring minimal bundle size overhead!
 
 ```javascript
-const { baseTokens } = require('dival-design-tokens');
+// Modern ESM import (Tree-shakeable!)
+import { ColorPrimaryDefault, Spacing4 } from 'dival-design-tokens';
 
-console.log(baseTokens.color.primary.value);
+// Or standard CommonJS if needed
+// const tokens = require('dival-design-tokens');
 ```
 
-However, the real power comes from using the integrated `build-tokens` CLI script to compile the tokens!
+The real power comes from using the integrated `build-tokens` CLI script to compile customized tokens yourself! If you want to access the raw uncompiled token JSON, you can explicitly import `dival-design-tokens/token.json`.
 
 ## How to Inject Your Font and Color Tokens
 
@@ -68,7 +72,9 @@ npx build-tokens my-theme.json ./dist/
 This command will output:
 - `./dist/token.scss` (SCSS Variables)
 - `./dist/token.css` (CSS Custom Properties - Variables)
-- `./dist/token.js` (JavaScript module exports)
+- `./dist/token.js` (CommonJS module exports)
+- `./dist/token.mjs` (ES Module exports - tree-shakeable)
+- `./dist/token.d.ts` (TypeScript typings)
 
 ## Versioning and Publishing with Changesets
 
