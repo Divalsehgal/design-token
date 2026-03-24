@@ -12,7 +12,7 @@
     "README.md"
   ],
   "bin": {
-    "build-tokens": "./bin/build.js"
+    "build-tokens": "bin/build.js"
   },
   "scripts": {
     "build": "node ./bin/build.js token.json build/",
