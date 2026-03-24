@@ -78,6 +78,26 @@ This command will output:
 
 ## Versioning and Publishing with Changesets
 
+## CI/CD & Automated Releases
+
+This project uses [Changesets](https://github.com/changesets/changesets) and GitHub Actions for automated versioning and publishing.
+
+### Setup
+
+1. Add an `NPM_TOKEN` to your GitHub repository secrets.
+2. When you make changes, run `npx changeset` to create a new version intent.
+3. Commit the generated changeset file.
+4. When you push to `main`, GitHub Actions will:
+   - Create a "Version Packages" PR if changesets exist.
+   - Automatically publish to npm when that PR is merged.
+
+### Workflow
+
+1. **Feature Work**: Create a branch, make changes.
+2. **Intent**: Run `npx changeset` and follow the prompts.
+3. **PR**: Merge your feature branch to `main`.
+4. **Release**: The GitHub Action will handle the rest!
+
 We use **Changesets** to streamline versioning, changelog generation, and publishing.
 
 Whenever you want to release a new version of your package:
