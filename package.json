@@ -1,6 +1,6 @@
 {
   "name": "dival-design-tokens",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Reusable design tokens library and builder",
   "main": "build/token.js",
   "module": "build/token.mjs",

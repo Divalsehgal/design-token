@@ -40,7 +40,7 @@ const config = {
       files: [
         {
           destination: 'token.js',
-          format: 'javascript/module'
+          format: 'javascript/module-flat'
         },
         {
           destination: 'token.mjs',

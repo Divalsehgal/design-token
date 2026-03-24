@@ -1,5 +1,11 @@
 # dival-design-tokens
 
+## 1.1.1
+
+### Patch Changes
+
+- reduce package size by removing metadata from CommonJS build
+
 ## 1.1.0
 
 ### Minor Changes
