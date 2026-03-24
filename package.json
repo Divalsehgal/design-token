@@ -1,0 +1,32 @@
+{
+  "name": "dival-design-tokens",
+  "version": "1.0.0",
+  "description": "Reusable design tokens library and builder",
+  "main": "index.js",
+  "files": [
+    "bin",
+    "build",
+    "index.js",
+    "token.json",
+    "config.json",
+    "README.md"
+  ],
+  "bin": {
+    "build-tokens": "./bin/build.js"
+  },
+  "scripts": {
+    "build": "node ./bin/build.js token.json build/",
+    "prepublishOnly": "npm run build",
+    "changeset": "changeset",
+    "release": "changeset publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "style-dictionary": "^3.9.2"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.30.0"
+  }
+}
